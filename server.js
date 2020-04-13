@@ -5,6 +5,7 @@ const assert = require('assert');
 const bodyParser = require("body-parser")
 const path = require("path")
 
+
 // Connection URL
 const url = 'mongodb://localhost:27017';
 
@@ -29,17 +30,23 @@ client.connect(function(err) {
 
   const db = client.db(dbName);
   const col = db.collection('students');
+ 
 
-  app.get("/", (req, res) => {
+  app.get("/index", (req, res) => {
+    console.log("index page");
     res.sendFile(path.join(__dirname + "/index.html"))
   })
 
 
   app.get("/game/", (req, res) => {
+    col.insertOne(myobj, function(err, res) {
+    });
     res.sendFile(path.join(__dirname + "/game.html"))
   })
+    
 
-
+    console.log("insert");
+    
   app.get('/', (req, res) => {
     // Get first two documents that match the query
     col.find({}).limit(1).toArray(function(err, docs) {

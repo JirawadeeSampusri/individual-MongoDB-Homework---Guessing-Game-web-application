@@ -2,7 +2,11 @@
 const GAME = {}
 index=1;
 
-var wordList = ["ABCD"];
+async function startGame() {
+  axios.get("/game")
+  attempt = 6;
+  answer.start();
+}
 
 function answer(button) {
     
@@ -10,14 +14,7 @@ function answer(button) {
     
     document.getElementById("letter"+index).innerHTML = answer1
     index++;
-    
-    if(index==5){
-       index=1;
-    };
 
-    if (answer1=="wordList"){
-      found = true;
-    }
     console.log(index)
 }
 function getInputValue(){
@@ -29,3 +26,16 @@ function getInputValue(){
     location.href="game.html";
 }
 
+function Click(){
+  // Selecting the input element and get its value 
+  
+  // Displaying the value
+  alert("You are win / try again");
+}
+
+function clickPlayagain() {
+  if (index ==4){
+    startGame();  
+  }
+  
+}
