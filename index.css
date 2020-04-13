@@ -81,7 +81,6 @@ margin-bottom: 10px;
 }
 
 .name {
-  margin-top: 4px;
   color: rgb(240, 48, 112);
   background-color: #eeeeee
 }
@@ -114,6 +113,10 @@ margin-bottom: 10px;
 
 .button3{
   background-color: rgb(77, 221, 226);
+}
+
+.guessCount{
+  margin-top: 60px;
 }
 
 #element1{display: inline-block; margin-top: 40px; font-size: 20px;}

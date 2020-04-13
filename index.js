@@ -1,15 +1,6 @@
-const GAME = {}
-var guess;
-var letter = [];
-var wrongLetters = []; //incorrectly guessed letters
-var counter = 7; //counts correct letters
-var losses = 0;
-var wins = 0;
-index=1;
 
-document.getElementById("counter").innerHTML = counter;
-document.getElementById("losses").innerHTML = losses;
-document.getElementById("wins").innerHTML = wins;
+const GAME = {}
+index=1;
 
 var wordList = ["ABCD"];
 
@@ -29,4 +20,12 @@ function answer(button) {
     }
     console.log(index)
 }
-      
+function getInputValue(){
+    // Selecting the input element and get its value 
+    var inputVal = document.getElementById("myInput").value;
+    
+    // Displaying the value
+    alert("Hi...." + inputVal);
+    location.href="game.html";
+}
+
